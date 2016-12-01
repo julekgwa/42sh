@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   screen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julekgwa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gkekana <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/04 08:28:08 by julekgwa          #+#    #+#             */
-/*   Updated: 2016/07/10 10:41:37 by julekgwa         ###   ########.fr       */
+/*   Created: 2016/09/11 17:44:42 by gkekana           #+#    #+#             */
+/*   Updated: 2016/09/11 17:44:43 by gkekana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-void	*ft_realloc(void *ptr, size_t len)
+void    move_cursor(int start, int end)
 {
-	void	*real;
+    int l;
 
-	real = (void *)malloc(len);
-	if (real)
-		memcpy(real, ptr, len);
-	free(ptr);
-	return (real);
+    l = start;
+    while (l < end)
+    {
+        ft_printf("\033[D");
+        l++;
+    }
 }
+
+void    clear_line(int end)
+{
+    move_cursor(0, end);
+    ft_printf("\033[0K");
+}
+

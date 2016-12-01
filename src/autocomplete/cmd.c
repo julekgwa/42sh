@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   cmd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julekgwa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gkekana <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/04 08:28:08 by julekgwa          #+#    #+#             */
-/*   Updated: 2016/07/10 10:41:37 by julekgwa         ###   ########.fr       */
+/*   Created: 2016/09/11 17:45:12 by gkekana           #+#    #+#             */
+/*   Updated: 2016/09/11 17:45:13 by gkekana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-void	*ft_realloc(void *ptr, size_t len)
+void    search_cmd(void)
 {
-	void	*real;
 
-	real = (void *)malloc(len);
-	if (real)
-		memcpy(real, ptr, len);
-	free(ptr);
-	return (real);
 }
